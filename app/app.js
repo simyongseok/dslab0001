@@ -1,6 +1,7 @@
 "use strict";
 //Module
 var express = require('express');
+var bodyParser = require('body-parser');
 var app = express();
 
 
@@ -10,6 +11,8 @@ var home = require('./src/routes/home')
 //MVC setting
 app.set('views', __dirname + '/src/views');
 app.set('view engine', 'ejs');
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extended:true}));
 
 // app.use(bodyParser.json());
 // app.use(bodyParser.urlencoded({extended : false}));
