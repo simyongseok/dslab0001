@@ -15,13 +15,16 @@ function login(){
   // console.log(req);
   // console.log(JSON.stringify(req));
   //stringify 데이터 오브젝트를 스트링으로 바꿔줌
+
   fetch("/login", {
     method:"POST",
     headers: {
       "Content-Type": "application/json",
     },
     body: JSON.stringify(req),
-  });
+  })
+  .then((res) => res.json())
+  .then((res) => console.log(res)); //.then(console.log); 이랑 동일
 }
 
 

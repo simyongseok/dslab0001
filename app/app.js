@@ -8,7 +8,7 @@ var app = express();
 //Routing
 var home = require('./src/routes/home') 
 
-//MVC setting
+//setting
 app.set('views', __dirname + '/src/views');
 app.set('view engine', 'ejs');
 app.use(bodyParser.json());
