@@ -1,9 +1,7 @@
 "use strict";
 
-var users = {
-  id : ["성은", "용석", "동준"],
-  password : ["111", "222", "333"],
-};
+var UserStorage = require("../../models/UserStorage");
+
 
 var output = {
 viewHome: (req, res) => {
@@ -21,21 +19,27 @@ var process = {
   viewLogin: (req, res) => {
     var id = req.body.id,
         password = req.body.password;
-    
+
+        var users = UserStorage.getUsers("id", "password");
+        
+        var response = {};
+
+        //로그인 여부
         if(users.id.includes(id)){
           var idx = users.id.indexOf(id);
+
+          //로그인 성공
           if(users.password[idx] === password){
-            return res.json({
-              success:true,
-            });
+            response.success = true;
+            return res.json(response);
           }
         }
 
-        return res.json({
-          success: false,
-          msg: "로그인에 실패하였습니다.",
-        });
-    console.log(req.body);
+        //로그인 실패
+        response.success = false;
+        response.msg = "로그인에 실패하였습니다.";
+        return res.json(response);
+    // // console.log(req.body);
     },
   };
   
