@@ -13,6 +13,11 @@ viewLogin: (req, res) => {
   res.render("home/login");
   console.log("입력 URL : " + req.url +"  ||  현재 폴더 경로 : " + __dirname + "  ||  현재 실행 파일 경로 : "+__filename);
   },
+
+viewRegister: (req, res) => {
+  res.render("home/register");
+  console.log("입력 URL : " + req.url +"  ||  현재 폴더 경로 : " + __dirname + "  ||  현재 실행 파일 경로 : "+__filename);
+  },
 }
 
 var process = {
