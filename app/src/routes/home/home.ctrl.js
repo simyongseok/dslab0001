@@ -1,9 +1,10 @@
 "use strict";
 
-var UserStorage = require("../../models/UserStorage");
+const { json } = require("body-parser");
+const User = require("../../models/User");
 
 
-var output = {
+const output = {
 viewHome: (req, res) => {
   res.render("home/index");
   console.log("입력 URL : " + req.url +"  ||  현재 폴더 경로 : " + __dirname + "  ||  현재 실행 파일 경로 : "+__filename);
@@ -20,36 +21,16 @@ viewRegister: (req, res) => {
   },
 }
 
-var process = {
+const process = {
   viewLogin: (req, res) => {
-    var id = req.body.id,
-        password = req.body.password;
-
-        var users = UserStorage.getUsers("id", "password");
-        
-        var response = {};
-
-        //로그인 여부
-        if(users.id.includes(id)){
-          var idx = users.id.indexOf(id);
-
-          //로그인 성공
-          if(users.password[idx] === password){
-            response.success = true;
-            return res.json(response);
-          }
-        }
-
-        //로그인 실패
-        response.success = false;
-        response.msg = "로그인에 실패하였습니다.";
-        return res.json(response);
-    // // console.log(req.body);
+    const user = new User(req.body);
+    const response = user.login();
+    return res.json(response);
     },
   };
   
-
-
 module.exports = {
-  output, process,
+  output, 
+  process,
 };
+
