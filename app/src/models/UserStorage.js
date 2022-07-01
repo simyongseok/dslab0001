@@ -20,7 +20,6 @@ class UserStorage {
     return newUsers;
   }
 
-
   static getUserInfo(id){
     const users = this.#users;
     const idx = users.id.indexOf(id);
@@ -33,6 +32,18 @@ class UserStorage {
 
     return userInfo;
   }
+
+  static save(userInfo){
+    const users = this.#users;
+    users.id.push(userInfo.id);
+    users.names.push(userInfo.name);
+    users.password.push(userInfo.password);
+    
+    console.log(users);
+
+    return users;
+  }
+
 }
 
 module.exports = UserStorage;

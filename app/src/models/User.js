@@ -8,16 +8,30 @@ class User{
   }
 
   login(){
-    const body = this.body;
-    const {id, password} = UserStorage.getUserInfo(body.id);
+    const client = this.body;
+    const {id, password} = UserStorage.getUserInfo(client.id);
 
     if(id){
-      if(id === body.id && password === body.password){
+      if(id === client.id && password === client.password){
         return { success: true, msg:"로그인 되었습니다."}
       }
       return { success: false, msg:"비밀번호가 일치하지 않습니다."}
     }
     return { success: false, msg:"존재하지 않는 아이디입니다.."}
+  }
+
+  register(){
+    const client = this.body;
+    const response = UserStorage.save(client);
+    return response;
+  //   if(id){
+  //     if(id === client.id && password === client.password){
+  //       return { success: true, msg:"성공적으로 가입 되었습니다."}
+  //     }
+  //     return { success: false, msg:"비밀번호가 일치하지 않습니다."}
+  //   }
+  //   return { success: false, msg:"존재하지 않는 아이디입니다.."}
+  // }
   }
 }
 

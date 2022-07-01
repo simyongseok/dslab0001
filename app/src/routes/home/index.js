@@ -2,7 +2,6 @@
 
 var express = require("express");
 var router = express.Router();
-
 var ctrl = require("./home.ctrl");
 
 //GET
@@ -12,7 +11,7 @@ router.get("/register", ctrl.output.viewRegister);
 
 //POST
 router.post("/login", ctrl.process.viewLogin);
-// router.post("/register", ctrl.process.viewRegister);
+router.post("/register", ctrl.process.viewRegister);
 
 
 

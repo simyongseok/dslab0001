@@ -7,9 +7,15 @@ const id = document.querySelector("#id"),
       passwordConfirm = document.querySelector("#password-confirm"),
       registerBtn = document.querySelector("#button");
 
-registerBtn.addEventListener("click",login);
+registerBtn.addEventListener("click",register);
 
-function login(){
+function register(){
+
+  if(!id.value) return alert("아이디를 입력해주세요.");
+  if(password.value !== passwordConfirm.value) return alert("입력한 비밀번호가 다릅니다.");
+
+  console.log(" sdgasdgasd");
+
   var req = {
     id: id.value,
     name: user.value,
