@@ -13,18 +13,27 @@ class UserStorage {
     },{});
     return userInfo;
   }
+  static #getUsers(data, isAll, fields){
+    const users = JSON.parse(data);
+    if(isAll) return users;
 
-  static getUsers(...fields){
-    console.log(fields);
-    // const users = this.#users;
     const newUsers = fields.reduce((newUsers, field) => {
-      if(users.hasOwnProperty(field)){
-        newUsers[field] = users[field]; 
-      }
+        if(users.hasOwnProperty(field)){
+          newUsers[field] = users[field]; 
+        }
+        return newUsers;
+      },{});   
+      console.log(newUsers) ;
       return newUsers;
-    },{});   
-    console.log(newUsers) ;
-    return newUsers;
+  }
+
+  static getUsers(isAll, ...fields){
+    return fs
+    .readFile("./src/database/dslab/users.json")
+    .then((data) => {    
+      return this.#getUsers(data, isAll, fields);
+    })
+    .catch(console.error);
   }
 
   static getUserInfo(id){
@@ -36,15 +45,22 @@ class UserStorage {
     .catch(console.error);
   }
 
-  static save(userInfo){
-    // const users = this.#users;
-    users.id.push(userInfo.id);
-    users.names.push(userInfo.name);
-    users.password.push(userInfo.password);
+  static async save(userInfo){
+    // const users = await this.getUsers("id", "password", "names");
+    const users = await this.getUsers(true);
+    if(users.id.includes(userInfo.id)){
+      throw "이미 존재하는 아이디입니다.";
+    }
     
-    console.log(users);
-
-    return users;
+    
+      users.id.push(userInfo.id);
+      users.password.push(userInfo.password);
+      users.names.push(userInfo.name);
+      fs.writeFile("./src/database/dslab/users.json", JSON.stringify(users));
+      return { success : true};
+    
+    //   console.log(users);
+    // return users;
   }
 
 }

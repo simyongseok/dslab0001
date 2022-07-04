@@ -2,7 +2,7 @@
 
 //html 메소드랑 연결 #을 붙히면 ID의 값(<input id="password")이랑 연결, 그냥 button으로 쓰면 메서드 이름이랑 연결(<button>)
 const id = document.querySelector("#id"),
-      user = document.querySelector("#name"),
+      name = document.querySelector("#name"),
       password = document.querySelector("#password"),
       passwordConfirm = document.querySelector("#password-confirm"),
       registerBtn = document.querySelector("#button");
@@ -18,7 +18,7 @@ function register(){
 
   var req = {
     id: id.value,
-    name: user.value,
+    name: name.value,
     password : password.value,
     passwordConfirm : passwordConfirm.value,
   };
