@@ -14,8 +14,6 @@ function register(){
   if(!id.value) return alert("아이디를 입력해주세요.");
   if(password.value !== passwordConfirm.value) return alert("입력한 비밀번호가 다릅니다.");
 
-  console.log(" sdgasdgasd");
-
   var req = {
     id: id.value,
     name: name.value,
@@ -39,7 +37,7 @@ function register(){
   .then((res) => {
     if(res.success){
       location.href = "/login";
-      alert(res.msg);
+      alert("회원가입에 성공하였습니다.");
     }
     else{
       alert(res.msg);

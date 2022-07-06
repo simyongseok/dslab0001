@@ -1,7 +1,7 @@
 "use strict";
 
 var app = require("../app");
-var PORT = 3000;
+var PORT = process.env.PORT;
 
 app.listen(PORT, ()=>{
   console.log("서버 기동");
