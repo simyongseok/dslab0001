@@ -38,6 +38,3 @@ function login(){
   });
 }
 
-
- console.log(id);
- console.log("hello");
