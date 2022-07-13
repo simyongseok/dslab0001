@@ -8,6 +8,10 @@ var id = document.querySelector("#id"),
 loginBtn.addEventListener("click",login);
 
 function login(){
+  
+  if(!id.value) return alert("아이디를 입력해주세요.");
+  if(!password.value) return alert("비밀번호를 입력해주세요.");
+
   var req = {
     id: id.value,
     password : password.value,

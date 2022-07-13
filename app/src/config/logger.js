@@ -17,7 +17,7 @@ const printLogFormat = {
   }),
   // json()
   printFomat
-  ),
+  ), 
   console: combine(
     colorize(),
     simple() ,
