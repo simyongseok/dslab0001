@@ -36,6 +36,7 @@ const process = {
     log(response,url);
     return res.json(response);
     },
+    
   viewRegister: async (req, res) => {
       const user = new User(req.body);
       const response = await user.register();

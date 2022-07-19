@@ -9,10 +9,8 @@ const id = document.querySelector("#id"),
 
 registerBtn.addEventListener("click",register);
 
-function register(){
 
-  if(!id.value) return alert("아이디를 입력해주세요.");
-  if(password.value !== passwordConfirm.value) return alert("입력한 비밀번호가 다릅니다.");
+function register(){
 
   var req = {
     id: id.value,
@@ -20,6 +18,9 @@ function register(){
     password : password.value,
     passwordConfirm : passwordConfirm.value,
   };
+  // if(!id.value) return alert("아이디를 입력해주세요.");
+  // if(password.value !== passwordConfirm.value) return alert("입력한 비밀번호가 다릅니다.");
+
   console.log(req);
 
   //stringify 데이터 오브젝트를 스트링으로 바꿔줌

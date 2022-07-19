@@ -1,5 +1,7 @@
 "use strict";
 //Module
+const Adminbro = require('admin-bro');
+const AdminBroExpress = require('@admin-bro/express');
 var express = require('express');
 var bodyParser = require('body-parser');
 const dotenv = require("dotenv");
@@ -8,10 +10,17 @@ const dotenv = require("dotenv");
 dotenv.config();
 var app = express();
 
-
+//admin-bro
+const adminBro = new Adminbro({
+  //  database : [],
+   rootPath: '/admin',
+});
+const router = AdminBroExpress.buildRouter(adminBro);
+app.use(adminBro.options.rootPath, router);
 
 //Routing
-var home = require('./src/routes/home') 
+var home = require('./src/routes/home'); 
+
 
 //setting
 app.set('views', __dirname + '/src/views');

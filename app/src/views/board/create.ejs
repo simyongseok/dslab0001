@@ -1,0 +1,143 @@
+
+<link rel="stylesheet" href="/css/board/main.css">
+<div id="Navigation">
+  <div class="Main-navigation">
+    <div class="Main-logo">
+      
+    </div>
+
+    <div class="Navigation-items">
+      <ul class="Navigation-list">
+        <li class="Navigation-list-item active">
+          <span class="Navigation-icon accent">
+            <i class="fa fa-home"></i>
+          </span>
+          <span class="Navigation-title">다운로드 게시판</span>
+          <ul class="Secondary-nav-list">
+            <li class="Secondary-nav-list-item">
+              <span class="Navigation-icon accent">
+              <i class="fa fa-bar-chart-o"></i> 
+              </span>
+              <span class="Navigation-title">Statistics</span>
+              <span class="Sub-nav-arrow"></span>
+            </li>
+            <li class="Secondary-nav-list-item">
+              <span class="Navigation-icon accent">
+              <i class="fa fa-cog"></i>
+              </span>
+              <span class="Navigation-title">Settings</span>
+              <span class="Sub-nav-arrow"></span>
+            </li>
+          </ul>
+
+        </li>
+
+
+        <li class="Navigation-list-item">
+          <span class="Navigation-icon accent">
+            <i class="fa fa-dollar"></i>
+          </span>
+          <span class="Navigation-title">업로드 게시판</span>
+          <ul class="Secondary-nav-list">
+            <li class="Secondary-nav-list-item">
+              <span class="Navigation-icon accent">
+                <i class="fa fa-file-text-o"></i>
+              </span>
+              <span class="Navigation-title">Invoice</span>
+              <span class="Sub-nav-arrow"></span>
+            </li>
+            <li class="Secondary-nav-list-item">
+              <span class="Navigation-icon accent">
+              <i class="fa fa-upload"></i>
+              </span>
+              <span class="Navigation-title">Proposals</span>
+              <span class="Sub-nav-arrow"></span>
+            </li>
+          </ul>
+
+        </li>
+
+
+        <li class="Navigation-list-item">
+          <span class="Navigation-icon accent">
+           <i class="fa fa-address-book-o"></i> 
+          </span>
+          <span class="Navigation-title">한컴 타자 연습</span>
+          <ul class="Secondary-nav-list">
+            <li class="Secondary-nav-list-item">
+              <span class="Navigation-icon accent">
+              <i class="fa fa-handshake-o"></i>
+              </span>
+              <span class="Navigation-title">Clients</span>
+              <span class="Sub-nav-arrow"></span>
+            </li>
+            <li class="Secondary-nav-list-item">
+              <span class="Navigation-icon accent">
+              <i class="fa fa-user-o"></i>
+              </span>
+              <span class="Navigation-title">People</span>
+              <span class="Sub-nav-arrow"></span>
+            </li>
+          </ul>
+        </li>
+
+        <li class="Navigation-list-item">
+          <span class="Navigation-icon accent">
+           <i class="fa fa-clock-o"></i> 
+          </span>
+          <span class="Navigation-title">Time tracker</span>
+        </li>
+
+      </ul>
+      <span class="divider"></span>
+      <div class="Navigation-short">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe iusto quisquam labore odio animi tempore quia recusandae est, incidunt quasi aut similique nostrum modi! Repellat molestias repellendus repudiandae distinctio dolor!
+      </div>
+      <span class="divider"></span>
+    </div>
+  </div>
+</div>
+<!-- NAV BAR END-->
+
+<!-- PIN BOARD -->
+<script src="/js/board/board.js" defer></script>
+<div id="Page">
+  <button id="createbutton">create</button>
+  <button id="editbutton">edit</button>
+  <div class="Main-page">
+    <div id="pin-board">
+      <ul class="pins">
+      
+        <li class="pin">      
+          <div class="pin-inner">
+            <div class="pin-thumbnail">
+              <div class="pin-hover">
+                <i class="fa fa-eye"></i>
+              </div>
+              <!-- <img src="https://s-media-cache-ak0.pinimg.com/736x/d9/01/63/d90163df2645f4e123a71a647ca68769.jpg">-->
+            </div>
+            <div class="pin-bar">
+              <span>게시글 생성</span>
+              <span>8 Pins</span>
+              <div class="pin-edit">
+                <button type="submit"><i class="fa fa-pencil"></i></button>
+                <button type="submit"><i class="fa fa-close"></i></button>
+              </div>
+            </div>
+            <div class="pin-info">
+            
+              <input id="subject" type="text" placeholder="제목" >
+              <input id="contents" type="text" placeholder="내용">
+              <a>작성자 : </a>
+              <input id="password-confirm" type="password" placeholder="패스워드 확인">
+              <p id="createbtn">create</p>
+          <p class="message">Already registered? <a href="/login">Sign In</a></p>
+            </div>
+        </li>
+        <!--그리드 셀-->
+       </ul>
+      </div>
+      </div>
+      </div>
+
+      <!-- Copyright (c) 2022 by BjurhagerStudios (https://codepen.io/Bjurhager/pen/qRyrYj) -->
