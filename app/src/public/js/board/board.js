@@ -2,7 +2,8 @@
 
 //ejs에서 어떤 동작을 처리하는 라우터 역할의 JS
 //html 메소드랑 연결 #을 붙히면 ID의 값(<input id="password")이랑 연결, 그냥 button으로 쓰면 메서드 이름이랑 연결(<button>)
-var subject = document.querySelector("#subject"),
+var id = document.querySelector("#id"),
+    subject = document.querySelector("#subject"),
     contents = document.querySelector("#contents"),
     passwordConfirm = document.querySelector("#password-confirm"),
     createBtn = document.querySelector("#createbtn");
@@ -13,6 +14,7 @@ createBtn.addEventListener("click",create);
 function create(){
 
   var req = {
+    id : id.value,
     subject: subject.value,
     contents : contents.value,
     passwordConfirm : passwordConfirm.value,
